@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ 	Copyright (c) 2018 Red Hat, Inc.
+ 	Distributed under license by Red Hat, Inc. All rights reserved.
+ 	This program is made available under the terms of the
+ 	Eclipse Public License v1.0 which accompanies this distribution,
+ 	and is available at http://www.eclipse.org/legal/epl-v10.html
+ 
+ 	Contributors:
+ 	   Red Hat, Inc. - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>che-plugin-parent</artifactId>
+        <groupId>org.eclipse.che.plugin</groupId>
+        <version>6.1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <artifactId>plugin-rhamt-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>RHAMT :: Plugin :: Parent</name>
+    <modules>
+        <module>che-plugin-rhamt-core</module>
+        <module>che-plugin-rhamt-ui</module>
+        <module>che-plugin-rhamt-shared</module>
+    </modules>
+    <properties>
+        <windup.version>4.0.0.Final</windup.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-exec</artifactId>
+                <version>1.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.emf</groupId>
+                <artifactId>org.eclipse.emf.common</artifactId>
+                <version>2.12.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.emf</groupId>
+                <artifactId>org.eclipse.emf.ecore</artifactId>
+                <version>2.12.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.emf</groupId>
+                <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+                <version>2.12.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.windup</groupId>
+                <artifactId>windup-tooling-api</artifactId>
+                <version>${windup.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.windup</groupId>
+                <artifactId>windup-tooling-impl</artifactId>
+                <version>${windup.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.windup.config</groupId>
+                <artifactId>windup-config-api</artifactId>
+                <version>${windup.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.windup.graph</groupId>
+                <artifactId>windup-graph-api</artifactId>
+                <version>${windup.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-logging</artifactId>
+                        <groupId>commons-logging</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.windup.utils</groupId>
+                <artifactId>windup-utils</artifactId>
+                <version>${windup.version}</version>
+            </dependency>
+            <!-- <dependency>
+	            <groupId>dom4j</groupId>
+	            <artifactId>dom4j</artifactId>
+	            <version>1.6.1</version>
+	        </dependency> -->
+        </dependencies>
+    </dependencyManagement>
+</project>
