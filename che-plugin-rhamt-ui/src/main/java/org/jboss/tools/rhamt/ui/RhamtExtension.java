@@ -34,5 +34,8 @@ public class RhamtExtension {
 //		mainContextMenuGroup.add(startRhamtAction);
 //		mainContextMenuGroup.add(stopRhamtAction);
 		mainContextMenuGroup.add(analyzeAction);
+		
+		
+		
 	}
 }

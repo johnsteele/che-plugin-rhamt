@@ -13,8 +13,17 @@ package org.jboss.tools.rhamt.ui;
 import com.google.gwt.i18n.client.Messages;
 
 public interface RhamtLocalizationConstant extends Messages {
-	  /* RhamtCommandPageView */
 	  @Key("view.rhamtCommandPage.arguments.text")
 	  String rhamtCommandPageViewArgumentsText();
+	  @Key("action.show.issues.title")
+	  String showIssuesActionTittle();
+	  @Key("action.show.issues.description")
+	  String showIssuesActionDescription();
+	  @Key("view.issues.title")
+	  String issuesViewTitle();
+	  @Key("view.issues.tooltip")
+	  String issuesViewTooltip();
+	  @Key("view.issues.group.count")
+	  String issues(int count);
 }
 
