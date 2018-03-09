@@ -32,6 +32,8 @@ import com.google.inject.Singleton;
 
 @Singleton
 public class AnalyzeAction extends AbstractPerspectiveAction {
+	
+	public static final String ID = "analyzeAction";
 
 	private final RhamtServiceClient rhamtClient;
     private final AppContext appContext;

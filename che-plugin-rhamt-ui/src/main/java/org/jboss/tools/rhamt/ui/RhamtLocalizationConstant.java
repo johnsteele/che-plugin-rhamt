@@ -25,5 +25,15 @@ public interface RhamtLocalizationConstant extends Messages {
 	  String issuesViewTooltip();
 	  @Key("view.issues.group.count")
 	  String issues(int count);
+	  @Key("view.issues.project.removed")
+	  String projectRemoved(String projectName);
+	  @Key("view.issues.project.remove.error")
+	  String projectRemoveError(String projectName);
+	  @Key("view.issues.project.update.error")
+	  String projectUpdateError(String projectName);
+	  @Key("view.issues.new.run.configuration")
+	  String newRunConfigurationLabel();
+	  @Key("view.issues.no.issues.title")
+	  String noIssuesTitle();
 }
 

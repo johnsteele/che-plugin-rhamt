@@ -45,12 +45,12 @@ public class IssueGroupNode extends SyntheticNode<Void> {
 
     @Inject
     public IssueGroupNode(@Assisted Path[] paths,
-                             @Assisted NodeSettings nodeSettings,
-                             PromiseProvider promises,
-                             NodeFactory nodeFactory,
-                             RhamtLocalizationConstant locale,
-                             RhamtResources resources,
-                             AppContext appContext) {
+                          @Assisted NodeSettings nodeSettings,
+                          PromiseProvider promises,
+                          NodeFactory nodeFactory,
+                          RhamtLocalizationConstant locale,
+                          RhamtResources resources,
+                          AppContext appContext) {
         super(null, nodeSettings);
         this.paths = paths;
         this.promises = promises;
@@ -91,7 +91,6 @@ public class IssueGroupNode extends SyntheticNode<Void> {
         });
     }
 
-    /** {@inheritDoc} */
     @Override
     public void updatePresentation(@NotNull NodePresentation presentation) {
         presentation.setPresentableText(locale.issues(paths != null ? paths.length : 0));

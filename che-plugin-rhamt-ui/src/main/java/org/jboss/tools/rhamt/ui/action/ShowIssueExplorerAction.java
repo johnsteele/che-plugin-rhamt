@@ -18,19 +18,20 @@ import javax.validation.constraints.NotNull;
 import org.eclipse.che.ide.api.action.AbstractPerspectiveAction;
 import org.eclipse.che.ide.api.action.ActionEvent;
 import org.jboss.tools.rhamt.ui.RhamtLocalizationConstant;
+import org.jboss.tools.rhamt.ui.issues.explorer.IssueExplorerPresenter;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class ShowIssuesAction extends AbstractPerspectiveAction {
+public class ShowIssueExplorerAction extends AbstractPerspectiveAction {
 
-	public static final String ID = "showIssues";
+	public static final String ID = "showIssueExplorer";
 
-	private final IssuesPresenter presenter;
+	private final IssueExplorerPresenter presenter;
 
 	@Inject
-	public ShowIssuesAction(IssuesPresenter presenter, RhamtLocalizationConstant locale) {
+	public ShowIssueExplorerAction(IssueExplorerPresenter presenter, RhamtLocalizationConstant locale) {
 		super(singletonList(PROJECT_PERSPECTIVE_ID), locale.showIssuesActionTittle(),
 				locale.showIssuesActionDescription(), null, null);
 		this.presenter = presenter;

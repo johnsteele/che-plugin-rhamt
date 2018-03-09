@@ -27,6 +27,8 @@ import org.jboss.tools.rhamt.ui.RhamtServiceClientImpl;
 import com.google.inject.Inject;
 
 public class StartRhamtAction extends BaseAction {
+	
+	public static final String ID = "startRhamt";
 
 	private final NotificationManager notificationManager;
 	private final RhamtServiceClientImpl rhamtClient;

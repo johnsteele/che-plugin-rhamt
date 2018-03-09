@@ -27,6 +27,8 @@ import org.eclipse.che.ide.api.notification.StatusNotification;
 import org.jboss.tools.rhamt.ui.RhamtServiceClientImpl;
 
 public class StopRhamtAction extends BaseAction {
+	
+	public static final String ID = "stopRhamt";
 
 	private final NotificationManager notificationManager;
 	private final RhamtServiceClientImpl rhamtClient;

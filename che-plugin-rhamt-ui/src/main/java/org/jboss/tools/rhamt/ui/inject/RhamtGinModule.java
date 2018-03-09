@@ -12,9 +12,14 @@ package org.jboss.tools.rhamt.ui.inject;
 
 import org.eclipse.che.ide.api.command.CommandType;
 import org.eclipse.che.ide.api.extension.ExtensionGinModule;
+import org.eclipse.che.ide.api.statepersistance.StateComponent;
 import org.jboss.tools.rhamt.ui.RhamtServiceClient;
 import org.jboss.tools.rhamt.ui.RhamtServiceClientImpl;
 import org.jboss.tools.rhamt.ui.command.RhamtCommand;
+import org.jboss.tools.rhamt.ui.issues.explorer.IssueExplorerRevealer;
+import org.jboss.tools.rhamt.ui.issues.explorer.IssueExplorerStateComponent;
+import org.jboss.tools.rhamt.ui.issues.explorer.IssueExplorerView;
+import org.jboss.tools.rhamt.ui.issues.explorer.IssueExplorerViewImpl;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.inject.client.multibindings.GinMultibinder;
@@ -27,6 +32,11 @@ public class RhamtGinModule extends AbstractGinModule {
 	    GinMultibinder.newSetBinder(binder(), CommandType.class)
         		.addBinding()
         		.to(RhamtCommand.class);
-	    bind(RhamtServiceClient.class).to(RhamtServiceClientImpl.class).in(Singleton.class);;
+	    bind(RhamtServiceClient.class).to(RhamtServiceClientImpl.class).in(Singleton.class);
+	    bind(IssueExplorerRevealer.class);
+	    GinMultibinder<StateComponent> stateComponents =
+	            GinMultibinder.newSetBinder(binder(), StateComponent.class);
+	    stateComponents.addBinding().to(IssueExplorerStateComponent.class); 
+	    bind(IssueExplorerView.class).to(IssueExplorerViewImpl.class).in(Singleton.class);
 	}
 }
